@@ -1,5 +1,6 @@
 import Suenio.*
 class Persona {
+	var property felicidad
 	var edad
 	var property plataAGanar
 	var sueniosACumplir =[]
@@ -15,6 +16,7 @@ class Persona {
 		if(suenio.puedeSerCumplido(self)){
 			sueniosACumplir.delete(suenio)
 			sueniosCumplidos.add(suenio)
+			felicidad = felicida + suenio.felicidad()
 		}else{
 			throw new Exception(message= "NO se pudo cumplir el suenio")
 		}
@@ -30,6 +32,10 @@ class Persona {
 	
      method cumplirSuenioMultiple(suenio){
      	suenio.puedenSerCumplidos(self)
+     }
+     
+     method esFeliz(){
+     	return felicidad > sueniosACumplir.map({suenio => suenio.felicidad()})
      }
 }
 
