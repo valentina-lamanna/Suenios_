@@ -32,3 +32,27 @@ class Persona {
      	suenio.puedenSerCumplidos(self)
      }
 }
+
+
+class Alocado inherits Persona{
+	method suenioMasImportante(){
+		return sueniosACumplir.max({suenio=> suenio.felicidad()})
+	}
+	
+	method cumplirSuenioMasPreciado(){
+		const suenioMasImportante = self.suenioMasImportante()
+		self.cumplirSuenio(suenioMasImportante)
+	}
+}
+class Obsesivo inherits Persona{
+	method cumplirSuenioMasPreciado(){
+		const primerSuenio = sueniosACumplir.first()
+ 		self.cumplirSuenio(primerSuenio)
+	}
+}
+class Realista inherits Persona{
+	method cumplirSuenioMasPreciado(){
+		const suenioAlAzar = sueniosACumplir.anyOne()
+		self.cumplirSuenio(suenioAlAzar)
+	}
+}

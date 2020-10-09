@@ -1,6 +1,6 @@
 import Persona.*
 class SuenioMultimple{
-	var losTresSuenios=[]
+	const losTresSuenios=[]
 	 method puedenSerCumplidos(persona){
 	 	if( !self.validar(persona)){
 	 		throw new Exception(message= "NO se pudo cumplir alguno de los suenios")
@@ -32,7 +32,7 @@ class TenerXHijos inherits Suenio {
 }
 class AdoptarXhijos inherits Suenio {
 	method puedeSerCumplido(persona){
-		return pesona.cantidadHijos() == 0
+		return persona.cantidadHijos() == 0
 	}
 }
 class ViajarA inherits Suenio {
