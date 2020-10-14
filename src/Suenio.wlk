@@ -17,6 +17,7 @@ class Suenio {
 	method felicidad(){
 		return felicidad
 	}
+
 }
 
 class RecibirseDeCarrera inherits Suenio {
@@ -26,6 +27,7 @@ class RecibirseDeCarrera inherits Suenio {
 }
 
 class TenerXHijos inherits Suenio {
+	
 	method puedeSerCumplido(persona){
 		return true
 	}
